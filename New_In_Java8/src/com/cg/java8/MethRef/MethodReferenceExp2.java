@@ -22,7 +22,7 @@ public class MethodReferenceExp2 {
     	say1.say();
     	
     	
-    	
-    	
+    	Sayable1 say2 = new MethodReferenceExp2()::saySomething;
+    	say2.say();
     }
 }
