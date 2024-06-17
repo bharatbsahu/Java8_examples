@@ -1,4 +1,4 @@
-package com.java8.collection;
+package com.cg.java8.collection;
 
 
 import java.util.HashMap;
