@@ -16,10 +16,18 @@ public class HowManyTimesEachCharacter {
 		
 		Map<Character, Long> charCountMap = countOccurrences(str);
 
+		/*
 	    charCountMap.forEach(
 	    		(character, count) ->
 	    			System.out.println("The character '" + character + "' occurs " + count + " times in the string.")
         );
+	    */
+		charCountMap.forEach(
+				
+				(character, count) ->  System.out.println(character+""+count)
+				
+				);
+		
 
 		
 	}
@@ -34,7 +42,7 @@ public class HowManyTimesEachCharacter {
                 
                 ); */
 		
-		
+		/*
 		return 	str.chars()
                 .mapToObj(c -> (char) c)
 				.collect(
@@ -42,9 +50,15 @@ public class HowManyTimesEachCharacter {
 						Collectors.groupingBy(Function.identity(), Collectors.counting())						
 						
 				);
+		*/
 		
+		return str.chars()
+				.mapToObj( C -> (char)C)
+				.collect( 
+						
+						Collectors.groupingBy(Function.identity(), Collectors.counting())
+				);
 		
-    
 	}
 
 }

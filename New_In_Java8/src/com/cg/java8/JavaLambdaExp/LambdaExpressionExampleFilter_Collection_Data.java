@@ -63,7 +63,16 @@ public class LambdaExpressionExampleFilter_Collection_Data {
         	);
         
         strem_Dt.forEach(P -> System.out.println(P.id+P.name+P.price));
-
+        
+        
+        // Using lambda to filter data price > 20000 
+        System.out.println("Using lambda to filter data price > 20000 "); 
+        Stream <Product> newProd = list.stream()
+        							.filter(
+        								p1 -> p1.price >20000
+        							);
+        newProd.forEach( P1 -> System.out.println(P1.name+P1.price) );
+        
 	}
 
 }

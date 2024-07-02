@@ -137,6 +137,29 @@ public class LambdaExpressionExampleComparator {
         	System.out.println(p1.id+" "+p1.name+" "+p1.price);  
         	
         } 
+        
+        //==================================================================
+        System.out.println("//==================================================================");
+        System.out.println("Sorting on the basis of ID practise...");  
+        Collections.sort(list, 
+        		
+        		
+        		(l1, l2) ->  Integer.compare(l1.id, l2.id)
+        		
+        		
+        );
+        for (Product1 p1: list) {
+        	System.out.println(p1.id+" "+p1.name+" "+p1.price);  
+        	
+        } 
+        
+        System.out.println("Sorting on the basis of name Practise...");  
+        Collections.sort(list, 
+        		
+        		(p1, p2) -> p1.name.compareTo(p2.name)
+        );
+        for (Product1 p1: list) {System.out.println(p1.id+" "+p1.name+" "+p1.price);   }
+        
 	}
 
 }
