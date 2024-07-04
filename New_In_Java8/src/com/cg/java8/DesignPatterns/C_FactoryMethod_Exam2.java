@@ -5,14 +5,14 @@ interface Product {
 	public void display();
 }
 
-class ProductA implements Product{
+class ProductA implements Product {
 	@Override
 	public void display() {
 		System.out.println("This is Concrete Product A.");
 	}
 }
 
-class ProductB implements Product{
+class ProductB implements Product {
 
 	@Override
 	public void display() {
@@ -24,7 +24,7 @@ interface Factory {
 	public Product factoryMethod();
 }
 
-class FactoryA implements Factory{
+class FactoryA implements Factory {
 
 	@Override
 	public Product factoryMethod() {
@@ -49,14 +49,24 @@ public class C_FactoryMethod_Exam2 {
 		
 		System.out.println("Hi From => C_FactoryMethod_Exam..");
 		
-		Factory _FactoryA = new FactoryA();
+		/*Factory _FactoryA = new FactoryA();
 		Product _ProductA = _FactoryA.factoryMethod();
 		_ProductA.display();
 		
 		
 		Factory _FactoryB = new FactoryB();
 		Product _ProductB = _FactoryB.factoryMethod();
-		_ProductB.display();
+		_ProductB.display();*/
+		
+		
+		Factory FA = new FactoryA();
+		Product PA = FA.factoryMethod();
+		PA.display();
+		
+		Factory FB = new FactoryB();
+		Product PB = FB.factoryMethod();
+		PB.display();
+		
 	}
 
 }
