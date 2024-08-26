@@ -169,5 +169,28 @@ public class Second_Max_Salary_of_employee {
 		Collections.reverse(employeeList);
 		Optional<Employee> emp4 = employeeList.stream().skip(1).findFirst();
 		System.out.println("Second Max Salary-2 -> " + emp4.get().toString()); 
+		
+		/** Second Max Salary-2 */
+		System.out.println("======= Practice ============================Second Max Salary-2");
+		
+		Collections.sort(employeeList, 
+				
+				(e1, e2) -> Double.compare(e1.salary, e2.salary));
+		for(Employee e:employeeList) {System.out.println(e.toString()); }
+		
+		Collections.reverse(employeeList);
+		for(Employee e:employeeList) {System.out.println(e.toString()); }
+		
+		Optional<Employee> emp5 = employeeList.stream().skip(1).findFirst();
+		System.out.println("Second Max Salary-2 -> " + emp5.get().toString()); 
+		
+		/** Second Max Salary-2 */
+		System.out.println("======= Practice-2 ============================Second Max Salary-2");
+		Optional<Employee> emp6 = employeeList.stream().sorted(
+				
+					Comparator.comparingDouble(Employee::getSalary).reversed()
+				).skip(1).findFirst();
+		System.out.println("Second Max Salary-2 -> " + emp6.get().toString());
+		
 	}
 }
