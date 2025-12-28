@@ -22,13 +22,40 @@ public class LambdaExpressionExampleForeachLoop {
 		_list.add("jai");  
 		
 
-		_list.forEach(
-				
-			n -> System.out.println(n)
-				
+		_list.forEach(	
+			n -> System.out.println(n)	
 		);
 		
 		
+		System.out.println("Hi From -> Java Lambda Expression Example: Foreach Loop Practice***********8");
+		
+		List <String> list = new ArrayList <>();
+		//list.add(null);
+		list.add("Bharat");
+		list.add("Tripti");
+		list.add("Pratyush");
+		list.add("Vaanya");
+					
+		list.forEach(
+				n1 -> {
+					System.out.println(n1);
+				}				
+			);
+		
+		System.out.println("Hi From -> Java Lambda Expression Start with B");
+		
+		list.forEach(
+				
+				n2 -> {
+					
+					if(n2.startsWith("B"))
+					{
+						System.out.println(n2);
+					}
+					
+				}
+				
+			);
 		
 
 	}

@@ -3,6 +3,7 @@ package com.java8.Zprectice;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 //import com.cg.java8.Employee;
@@ -19,7 +20,21 @@ public class Intermediate_Operations {
 		Stream <String> stream = names.stream()
 									.filter(name -> name.startsWith("J"))
 									.map(String::toUpperCase);
-		stream.forEach(System.out::print);
+		
+		ArrayList<String> list = stream.collect(Collectors.toCollection(ArrayList::new));
+		System.out.println(list);
+		
+		//stream.forEach(System.out::print);
+		
+		Stream <String> stream1 = names.stream()
+							.filter( name -> name.endsWith("n"))
+							.map(String::toUpperCase);
+		
+		stream1.forEach(System.out::print);
+		
+		Stream <String> stream2 = names.stream()
+										.filter(name -> name.startsWith("J"))
+										.map(String::toUpperCase);
 		
 	}
 

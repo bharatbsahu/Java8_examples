@@ -18,6 +18,14 @@ public class LambdaExpressionExampleNoParameter {
 			
 		};
 		System.out.println(_say.say());  
+		
+		//practice
+		
+		Sayable say1 = () -> {
+						return "Hi From -> Java Lambda 2";
+					};
+		
+		System.out.println(say1.say());
 
 	}
 

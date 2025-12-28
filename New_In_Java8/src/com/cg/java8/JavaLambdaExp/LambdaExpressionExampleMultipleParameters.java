@@ -24,6 +24,12 @@ public class LambdaExpressionExampleMultipleParameters {
 		
 		System.out.println(_ad1.AddFun(300, 400));
 		
+		//Practice
+		
+		Addable add123 = (a, b) -> {
+						return a + b;
+					};
+		System.out.println(add123.AddFun(34, 45));
 	}
 
 }

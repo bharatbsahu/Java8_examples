@@ -25,7 +25,15 @@ public class LambdaExpressionExampleSingleParameter {
 		};
 		
 		System.out.println(_s1.say("Pritam"));
-
+		
+		//Practice
+		Sayable2 s3 = (nm) -> {
+							return "Hellllooooo:" + nm;
+				};
+		
+		System.out.println(s3.say("Vaanya"));
+				
+				
 	}
 
 }

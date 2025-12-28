@@ -34,5 +34,31 @@ public class LambdaForEachPrint {
     			}
     		}
         );
+        System.out.println("-------------------Using lambda expression to print all elements of Array List");
+        // Using lambda expression to print all elements of Array List
+        arrL.forEach(
+        		
+        		n -> {
+        			System.out.println(n);
+        		}
+        		
+        		);
+        
+        System.out.println("-------------------Using lambda expression to print even elements of Array List");
+        // Using lambda expression to print even elements of Array List
+        
+        arrL.forEach(
+        		
+        		n1 -> {
+        			
+        			if ( n1 % 2 == 0) {
+        				System.out.println(n1);
+        			}
+        			
+        			}
+        		
+        		);
+        
+        
 	}
 }
