@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 class Employee
@@ -192,5 +193,79 @@ public class Second_Max_Salary_of_employee {
 				).skip(1).findFirst();
 		System.out.println("Second Max Salary-2 -> " + emp6.get().toString());
 		
+		
+		/** Second Max Salary-3 */
+		System.out.println("======= Practice ============================Second Max Salary-3, 30 Dec 2025  ====================================================================================");
+		
+		List <Employee> empList = new ArrayList <>();
+		
+		empList.add(new Employee(111, "Jiya Brein", 32, "Female", "HR", 2011, 25000.0));
+		empList.add(new Employee(122, "Paul Niksui", 25, "Male", "Sales And Marketing", 2015, 13500.0));
+		empList.add(new Employee(133, "Martin Theron", 29, "Male", "Infrastructure", 2012, 18000.0));
+		empList.add(new Employee(144, "Murali Gowda", 28, "Male", "Product Development", 2014, 32500.0));
+		empList.add(new Employee(155, "Nima Roy", 27, "Female", "HR", 2013, 22700.0));
+		
+		empList.forEach( e -> System.out.println(e.toString()) 	);
+		
+		/** Max Salary -> */
+		System.out.println(" Max Salary -> ...");  
+		Optional<Employee> emp22 = empList
+				.stream()
+				.collect(
+						
+						Collectors.maxBy( Comparator.comparingDouble(Employee::getSalary) )
+						
+				);
+		System.out.println(" Max Salary -> " + emp22.get().toString()); 
+		
+		/** Second Max Salary -> */
+		System.out.println(" Second Max Salary -> ");  
+		
+		Optional<Employee> emp33 = empList
+				.stream()
+				.sorted(
+						Comparator.comparingDouble(Employee::getSalary).reversed()
+				).skip(1).findFirst();
+				
+		System.out.println(" Second Max Salary ->  " + emp33.get().toString()); 
+		
+		
+		/** Sorting on the basis of Salary Reverse ... */
+		System.out.println("***** Sorting on the basis of Salary Reverse ...*****");  
+		Collections.sort(empList, 
+				
+				(e1, e2) -> {
+					
+					return Double.compare(e1.getSalary(), e2.getSalary());
+				}
+				
+				);
+		Collections.reverse(empList);
+		empList.forEach( e -> System.out.println(" Sorting on the basis of Salary Reverse ... " + e.toString()) 	);
+		
+		
+		/** Sorting on the basis of Emp Name ... */
+		System.out.println("Sorting on the basis of Emp Name  ... ");
+		
+		Collections.sort(empList, 
+				
+				(e1, e2) -> {
+					
+					return e1.getName().compareTo(e2.getName());
+				}
+				
+				);
+		empList.forEach( e -> System.out.println(" Sorting on the basis of Emp Name  ...  " + e.toString()) 	);
+		
+		/** Max Salary -> */
+		System.out.println(" Max Salary -> ...");  
+		
+		Optional<Employee> emp44 = empList
+				.stream()
+				.collect(
+						
+						Collectors.maxBy(Comparator.comparingDouble(Employee::getSalary))
+				);
+		System.out.println("Max Salary -> " + emp44.get().toString()); 
 	}
 }
