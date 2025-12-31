@@ -59,6 +59,28 @@ public class SumByUsingCollectorsMethods {
     	
     	System.out.println("min():"+ProductA.price); 
     	
+    	//Practice ......................
+        // Using Collectors's method to sum the prices.
+    	double totalpricees = productsList
+    				.stream()
+    				.collect(Collectors.summingDouble( prod -> prod.price));
+    	System.out.println("totalpricees:"+totalpricees);
+    	
+    	// max() method to get max Product price   
+    	Product4 ProductAA = productsList
+    			.stream()
+    			.max(  (prod1, prod2) -> prod1.price >  prod2.price ? 1: -1).get();
+    	System.out.println("ProductAA max():"+ProductAA.price);
+    	
+    	// min() method to get min Product price  
+    	Product4 ProductBB = productsList
+    			.stream()
+    			.min(       
+    				(p1, p2) -> 
+    					p1.price > p2.price ? 1: -1
+    				
+    			).get();
+    	System.out.println("ProductBB min ():"+ProductBB.price);
     	
     }
 

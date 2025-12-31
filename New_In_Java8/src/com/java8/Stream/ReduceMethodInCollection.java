@@ -42,7 +42,13 @@ public class ReduceMethodInCollection {
         						.reduce(0.0f, Float::sum);
         
         System.out.println(totalPrice2);
-
+        
+        // More Practice
+        Float totalPrice3 = productsList
+        		.stream()
+        		.map( prod -> prod.price )
+        		.reduce(0.0f, (sum, price) ->  sum + price);
+        System.out.println(totalPrice3);
 	}
 
 }

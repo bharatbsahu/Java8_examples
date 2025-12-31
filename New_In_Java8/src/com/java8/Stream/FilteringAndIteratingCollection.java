@@ -32,6 +32,12 @@ public class FilteringAndIteratingCollection {
         	.filter( prod -> prod.price == 30000)
         	.forEach(prod -> System.out.println(prod.name));
 		
+        System.out.println("************** Practice...........");
+        
+        productsList
+        	.stream()
+        	.filter( p1 -> p1.price == 30000)
+        	.forEach( p2 -> System.out.println(p2.name));
 
 	}
 

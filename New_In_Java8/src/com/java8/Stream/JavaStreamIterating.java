@@ -16,6 +16,12 @@ public class JavaStreamIterating {
 		.limit(5)
 		.forEach(System.out::println);
 		
+		System.out.println("Java Stream Iterating Example Practice------");
+		
+		Stream.iterate(1, element -> element + 1 )
+				.filter( element -> element % 5 == 0 )
+				.limit(10)
+				.forEach( System.out::println );
 		
 	}
 

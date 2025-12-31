@@ -1,6 +1,7 @@
 package com.java8.Stream;
 
-import java.util.*;  
+import java.util.*;
+import java.util.stream.Collectors;  
 
 //Filtering Collection without using Stream
 
@@ -25,6 +26,9 @@ public class JavaStreamExample {
         productsList.add(new Product(4,"Sony Laptop",28000f));  
         productsList.add(new Product(5,"Apple Laptop",90000f));  
         List<Float> productPriceList = new ArrayList<Float>();  
+        
+        System.out.println("With Out Stream Execution");
+        
         for(Product product: productsList){  
               
             // filtering data of list  
@@ -32,7 +36,28 @@ public class JavaStreamExample {
                 productPriceList.add(product.price);    // adding price to a productPriceList  
             }  
         }  
-        System.out.println(productPriceList);   // displaying data  
+        System.out.println(productPriceList);   // displaying data
+        
+        System.out.println("With Stream Execution");
+        
+        List<Float>  pricelIst23  = productsList
+        						.stream()
+        						.filter( p -> p.price < 30000 ) //filtering data  
+        						.map( p -> p.price) 			//fetching price
+        						.collect(Collectors.toList());	//collecting as list
+        System.out.println(pricelIst23);   // displaying data
+        
+        System.out.println("With Stream Execution222");
+        List<Float> lstprice99 = productsList
+        						.stream()
+        						.filter( 
+        							p -> p.price > 30000
+        							)
+        						.map( 
+        								p -> p.price
+        							)
+        						.collect(Collectors.toList());
+        System.out.println(lstprice99);   // displaying data
     }  
 } 
 
