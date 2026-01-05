@@ -1,6 +1,6 @@
 package com.cg.java8.oops;
 
-public class GFG {
+public class StaticMethosGetSet {
     
     static String Employee_name;
     static float Employee_salary;
@@ -16,7 +16,7 @@ public class GFG {
     }
 
     public static void main(String args[]) {
-        GFG.set("Rathod Avinash", 10000.0f);
-        GFG.get();
+        StaticMethosGetSet.set("Rathod Avinash", 10000.0f);
+        StaticMethosGetSet.get();
     }
 }
