@@ -6,6 +6,34 @@ package com.cg.java8.DesignPatterns;
 //Class 1
 //Helper class
 
+class Singleton2{
+	
+	private static Singleton2  Singleton_Obj = null;
+	
+	String strr;
+	
+	private Singleton2() {
+		strr = "Hello I am a string part of Singleton2 class";
+	}
+	
+	public static Singleton2 getInstance() {
+		
+		if (null == Singleton_Obj) {
+			Singleton_Obj = new Singleton2();
+			return Singleton_Obj;
+		} else {
+			return Singleton_Obj;
+		}
+	}
+}
+
+
+
+
+
+
+
+
 class Singleton1 {
 	
 	private static Singleton1 single_Instance = null;
@@ -65,6 +93,23 @@ public class C_Singleton_Example1 {
             // Print statement
             System.out.println(
                 "Three objects DO NOT point to the same memory location on the heap");
+        }
+        
+        System.out.println("Hi From => Singleton_Example2");
+        
+        Singleton2 xx = Singleton2.getInstance();
+        Singleton2 yy = Singleton2.getInstance();
+        Singleton2 zz = Singleton2.getInstance();
+        
+        if (xx == yy && yy == zz) {
+        	 
+            // Print statement
+            System.out.println(
+                "Three objects point to the same memory location on the heap i.e, to the same object2");
+            
+            System.out.println("Hashcode of xx is " + xx.hashCode());
+            System.out.println("Hashcode of yy is " + yy.hashCode());
+            System.out.println("Hashcode of zz is " + zz.hashCode());
         }
         
 	}
