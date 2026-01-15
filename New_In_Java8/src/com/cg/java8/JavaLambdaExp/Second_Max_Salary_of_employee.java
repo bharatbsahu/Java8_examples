@@ -169,5 +169,28 @@ public class Second_Max_Salary_of_employee {
 		Collections.reverse(employeeList);
 		Optional<Employee> emp4 = employeeList.stream().skip(1).findFirst();
 		System.out.println("Second Max Salary-2 -> " + emp4.get().toString()); 
+		
+		System.out.println("================================================================================================================");
+		
+		/** Sorting on the basis of Salary ... */
+		System.out.println("Sorting on the basis of Salary ...");  
+		Collections.sort(employeeList, 
+				
+				(e1, e2) -> {
+					return Double.compare(e1.salary, e2.salary);
+				}
+				
+				);
+		for(Employee e:employeeList) {System.out.println(e.toString()); }
+		
+		/** Sorting on the basis of Salary Reverse ... */
+		System.out.println("Sorting on the basis of Salary Reverse ...");  
+		Collections.reverse(employeeList);
+		for(Employee e:employeeList) {System.out.println(e.toString()); }
+		
+		/** Second Max Salary */
+		Optional<Employee> emp222 = employeeList.stream()
+									.skip(1).findFirst();
+		System.out.println("Second Max Salary -> " + emp2.get().toString()); 
 	}
 }
