@@ -49,6 +49,14 @@ public class ReduceMethodInCollection {
         		.map( prod -> prod.price )
         		.reduce(0.0f, (sum, price) ->  sum + price);
         System.out.println(totalPrice3);
+        
+        System.out.println("===============Practice4 =======================================================");
+        Float totalPrice4 = productsList.stream()
+        						.map( prod -> prod.price)
+        						.reduce(0.0f,(sum , price ) -> sum + price);
+        
+        System.out.println("totalPrice4->" + totalPrice4);
+        
 	}
 
 }

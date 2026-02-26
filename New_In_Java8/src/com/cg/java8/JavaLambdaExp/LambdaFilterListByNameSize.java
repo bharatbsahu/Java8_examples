@@ -36,7 +36,26 @@ public class LambdaFilterListByNameSize {
 		);
 		System.out.println("City =>"+city);
 		
+		System.out.println("============================== Practice2 , sort list on  basis  of length using stream========================================");
 		
+		Collections.sort(city,
+				
+				(c1 , c2) -> {
+						return Integer.compare(c1.length(), c2.length());
+					}
+				
+				);
+		System.out.println("City length =>"+city);
+		
+		System.out.println("============================== Practice2 , sort list on  basis  of Name using stream========================================");
+		Collections.sort(city, 
+				
+				(P1, P2) -> {
+						return P1.compareTo(P2);
+					}
+				
+				);
+		System.out.println("City Name =>"+city);
 	}
 
 }

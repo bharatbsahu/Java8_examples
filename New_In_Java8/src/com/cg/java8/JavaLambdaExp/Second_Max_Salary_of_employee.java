@@ -192,5 +192,51 @@ public class Second_Max_Salary_of_employee {
 		Optional<Employee> emp222 = employeeList.stream()
 									.skip(1).findFirst();
 		System.out.println("Second Max Salary -> " + emp2.get().toString()); 
+		
+		
+		/** Second Max Salary At One Shot */
+		Optional<Employee> emp1111 = employeeList.stream()
+								.sorted(
+										Comparator.comparingDouble(Employee::getSalary).reversed()
+								).skip(1).findAny();
+		System.out.println("Second Max Salary -> " + emp1.get().toString()); 
+		
+		/** Second Max Salary In 3 easy Steps
+		 * 1. Sorting on the basis of Salary
+		 * 2. Sorting on the basis of Salary Reverse ...
+		 * 3. Get Second Max Salary
+		 * 
+		 * */
+		
+		/** 1. Sorting on the basis of Salary **/
+		
+		Collections.sort(employeeList, 
+				
+				(ee1, ee2) -> {
+					
+					return Double.compare(ee1.getSalary(), ee2.getSalary());
+				}
+				
+				);
+		employeeList.forEach(System.out::println);
+		
+		/** 2. Sorting on the basis of Salary Reverse ...**/
+		Collections.reverse(employeeList);
+		employeeList.forEach(System.out::println);
+		
+		System.out.println("Second Max Salary ->__________________________++++++++++++++++++++++++= " ); 
+		/**3. Get Second Max Salary **/
+		Optional<Employee> emp22233 =  employeeList.stream().skip(1).findAny();
+		System.out.println("Second Max Salary -> " + emp22233.get().toString()); 
+		
+		System.out.println("========================== Practice 11 ================================");
+		Optional<Employee> emplisstt11 = employeeList.stream()
+								.sorted(
+										
+										Comparator.comparingDouble(Employee::getSalary).reversed()
+										
+									).skip(1).findAny();
+		System.out.println("Second Max Salary -> " + emplisstt11.get().toString()); 
+		
 	}
 }

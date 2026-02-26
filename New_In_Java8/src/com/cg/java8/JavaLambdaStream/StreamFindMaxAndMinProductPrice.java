@@ -47,9 +47,6 @@ public class StreamFindMaxAndMinProductPrice {
         						.min(
         								(prod1, prod2) -> prod1.price > prod2.price ? 1: -1
         						).get();
-        
-        
-        
         System.out.println(productB.price);  
 	}
 

@@ -25,22 +25,38 @@ public class HowManyTimesEachCharacterPrint {
 					
 				}
 			);
+		
+		
+		System.out.println("+++++++++++++++++++= Practice ===================================");
+		
+		Map<Character, Long> counting = countOccurrences2(str);
+		
+		counting.forEach( 
+				
+				(charrr, longgg) -> System.out.println(charrr + "->" +longgg)
+				
+				);
 
 	}
-
 	private static Map<Character, Long> countOccurrences(String str) {
-		
-		
-		
+
 		return str.chars()
 				.mapToObj(
 					C -> (char)C
-					)
+				)
 				.collect(
-						
 						Collectors.groupingBy(Function.identity(), Collectors.counting())
-						
-						);
+				);
 	}
-
+	
+	
+	private static Map<Character, Long> countOccurrences2(String str) {
+		
+		return str.chars().mapToObj( c -> (char) c)
+		.collect(
+				
+				Collectors.groupingBy( Function.identity() ,  Collectors.counting() )
+		);
+		
+	}
 }

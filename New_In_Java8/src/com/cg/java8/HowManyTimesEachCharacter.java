@@ -52,12 +52,19 @@ public class HowManyTimesEachCharacter {
 				);
 		*/
 		
-		return str.chars()
+		/*return str.chars()
 				.mapToObj( C -> (char)C)
 				.collect( 
 						
 						Collectors.groupingBy(Function.identity(), Collectors.counting())
 				);
+		*/
+		return str.chars()
+		.mapToObj( C -> (char)C)
+		.collect(
+				
+				Collectors.groupingBy(Function.identity(), Collectors.counting())
+		);
 		
 	}
 

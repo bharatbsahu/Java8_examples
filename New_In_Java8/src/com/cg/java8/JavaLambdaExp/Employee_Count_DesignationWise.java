@@ -55,7 +55,31 @@ public class Employee_Count_DesignationWise {
 		/** 4) Keep insertion order (e.g., order of first appearance) */
 		
 		
-
+		System.out.println("*************************Practice *******************************************");
+		EmpList.forEach(System.out::println);
+		
+		Map<String, Long> desgCnt = EmpList.stream()
+								.collect( 
+										
+										groupingBy(Employe::getDesignation, counting() )
+										
+								);
+		
+		desgCnt.forEach(
+					(desnnn, cnttt) ->  System.out.println(desnnn + " -> " + cnttt)
+				);
+		
+		System.out.println("*************************Practice-2 *******************************************");
+		
+		Map<String, Long> Empdsss = EmpList.stream()
+						.collect(
+								
+							groupingBy(Employe::getDesignation, counting())	
+						);
+		Empdsss.forEach(
+				(desnnn, cnttt) ->  System.out.println(desnnn + " -> " + cnttt)
+		);
+		
 	}
 
 }
